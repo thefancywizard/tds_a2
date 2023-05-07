@@ -83,6 +83,13 @@ To define a plugin for all bundles of a given entity type, use the '*' wildcard:
  *   }
 ```
 
+To define a plugin for all entity types and all their bundles, use:
+```
+ *   bundles = {
+ *     "*.*"
+ *   }
+```
+
 Other annotation options:
 ```
  *   weight = 10,

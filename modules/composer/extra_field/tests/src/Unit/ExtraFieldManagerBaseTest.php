@@ -21,15 +21,16 @@ class ExtraFieldManagerBaseTest extends UnitTestCase {
   /**
    * {@inheritdoc}
    */
-  public function setUp() {
+  protected function setUp(): void {
     parent::setUp();
 
     $this->baseManager = $this->getMockBuilder('Drupal\extra_field\Plugin\ExtraFieldManagerBase')
       ->disableOriginalConstructor()
-      ->setMethods([
+      ->onlyMethods([
         'getEntityTypeManager',
         'getEntityBundleType',
         'getEntityBundles',
+        'getAllContentEntityTypes',
       ])
       ->getMockForAbstractClass();
   }
@@ -149,6 +150,13 @@ class ExtraFieldManagerBaseTest extends UnitTestCase {
         ],
       ]));
 
+    $this->baseManager->expects($this->any())
+      ->method('getAllContentEntityTypes')
+      ->will($this->returnValue([
+        'node',
+        'without_bundles',
+      ]));
+
     $supportedEntityBundles = self::callMethod($this->baseManager, 'supportedEntityBundles', [$entityBundleKeys]);
     $this->assertEquals($result, $supportedEntityBundles);
   }
@@ -159,7 +167,7 @@ class ExtraFieldManagerBaseTest extends UnitTestCase {
    * @return array
    *   Contains:
    *   - Entity bundle keys.
-   *   - Output as retured by ::supportedEntityBundles
+   *   - Output as returned by ::supportedEntityBundles.
    */
   public function supportedEntityBundlesProvider() {
     return [
@@ -209,6 +217,25 @@ class ExtraFieldManagerBaseTest extends UnitTestCase {
           'no_bundles.no_bundles' => [
             'entity' => 'no_bundles',
             'bundle' => 'no_bundles',
+          ],
+        ],
+      ],
+      [
+        // All entity types and all bundle keys.
+        ['*.*'],
+        // Result.
+        [
+          'node.article' => [
+            'entity' => 'node',
+            'bundle' => 'article',
+          ],
+          'node.page' => [
+            'entity' => 'node',
+            'bundle' => 'page',
+          ],
+          'without_bundles.without_bundles' => [
+            'entity' => 'without_bundles',
+            'bundle' => 'without_bundles',
           ],
         ],
       ],

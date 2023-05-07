@@ -18,7 +18,7 @@ class ExtraFieldFormPluginTest extends KernelTestBase {
    *
    * @var array
    */
-  public static $modules = [
+  protected static $modules = [
     'extra_field',
     'extra_field_test',
   ];

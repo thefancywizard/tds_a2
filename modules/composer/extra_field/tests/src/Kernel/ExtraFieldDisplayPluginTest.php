@@ -23,7 +23,7 @@ class ExtraFieldDisplayPluginTest extends KernelTestBase {
    *
    * @var array
    */
-  public static $modules = [
+  protected static $modules = [
     'extra_field',
     'extra_field_test',
     'node',
@@ -49,7 +49,7 @@ class ExtraFieldDisplayPluginTest extends KernelTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp() {
+  protected function setUp(): void {
     parent::setUp();
 
     $this->installEntitySchema('user');

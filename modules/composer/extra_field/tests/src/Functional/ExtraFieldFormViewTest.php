@@ -12,7 +12,7 @@ class ExtraFieldFormViewTest extends ExtraFieldBrowserTestBase {
   /**
    * {@inheritdoc}
    */
-  public static $modules = [
+  protected static $modules = [
     'extra_field',
     'extra_field_test',
     'node',
@@ -28,7 +28,7 @@ class ExtraFieldFormViewTest extends ExtraFieldBrowserTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp() {
+  protected function setUp(): void {
     parent::setUp();
 
     $this->content = $this->createContent('first_node_type');

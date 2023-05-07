@@ -86,7 +86,7 @@ class ExtraFieldDisplayManager extends ExtraFieldManagerBase implements ExtraFie
         $fieldName = $this->fieldName($pluginId);
         $info[$entityType][$bundle]['display'][$fieldName] = [
           'label' => $definition['label'],
-          'description' => isset($definition['description']) ? $definition['description'] : '',
+          'description' => $definition['description'] ?? '',
           'weight' => $definition['weight'],
           'visible' => $definition['visible'],
         ];

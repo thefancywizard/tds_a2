@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit5bf42a2d85f5a728526247be35828613
+class ComposerStaticInit8e337bedb61c59a051182e42d25d4d40
 {
     public static $files = array (
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
@@ -95,6 +95,7 @@ class ComposerStaticInit5bf42a2d85f5a728526247be35828613
             'Symfony\\Component\\Console\\' => 26,
             'Symfony\\Cmf\\Component\\Routing\\' => 30,
             'Symfony\\Bridge\\PsrHttpMessage\\' => 30,
+            'Stripe\\' => 7,
             'SelfUpdate\\' => 11,
         ),
         'R' => 
@@ -327,6 +328,10 @@ class ComposerStaticInit5bf42a2d85f5a728526247be35828613
         array (
             0 => __DIR__ . '/..' . '/symfony/psr-http-message-bridge',
         ),
+        'Stripe\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/stripe/stripe-php/lib',
+        ),
         'SelfUpdate\\' => 
         array (
             0 => __DIR__ . '/..' . '/consolidation/self-update/src',
@@ -345,8 +350,8 @@ class ComposerStaticInit5bf42a2d85f5a728526247be35828613
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
         ),
         'Psr\\Container\\' => 
         array (
@@ -490,10 +495,10 @@ class ComposerStaticInit5bf42a2d85f5a728526247be35828613
         ),
         'Doctrine\\Common\\' => 
         array (
-            0 => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common',
-            1 => __DIR__ . '/..' . '/doctrine/event-manager/src',
+            0 => __DIR__ . '/..' . '/doctrine/event-manager/src',
+            1 => __DIR__ . '/..' . '/doctrine/reflection/lib/Doctrine/Common',
             2 => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common',
-            3 => __DIR__ . '/..' . '/doctrine/reflection/lib/Doctrine/Common',
+            3 => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common',
         ),
         'Consolidation\\SiteProcess\\' => 
         array (
@@ -626,11 +631,11 @@ class ComposerStaticInit5bf42a2d85f5a728526247be35828613
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit5bf42a2d85f5a728526247be35828613::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit5bf42a2d85f5a728526247be35828613::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit5bf42a2d85f5a728526247be35828613::$prefixesPsr0;
-            $loader->fallbackDirsPsr0 = ComposerStaticInit5bf42a2d85f5a728526247be35828613::$fallbackDirsPsr0;
-            $loader->classMap = ComposerStaticInit5bf42a2d85f5a728526247be35828613::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit8e337bedb61c59a051182e42d25d4d40::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit8e337bedb61c59a051182e42d25d4d40::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit8e337bedb61c59a051182e42d25d4d40::$prefixesPsr0;
+            $loader->fallbackDirsPsr0 = ComposerStaticInit8e337bedb61c59a051182e42d25d4d40::$fallbackDirsPsr0;
+            $loader->classMap = ComposerStaticInit8e337bedb61c59a051182e42d25d4d40::$classMap;
 
         }, null, ClassLoader::class);
     }

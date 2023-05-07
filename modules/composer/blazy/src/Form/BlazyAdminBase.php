@@ -376,7 +376,7 @@ abstract class BlazyAdminBase implements BlazyAdminInterface {
           'content' => $this->t('Image linked to content'),
         ],
         '#empty_option' => $this->t('- None -'),
-        '#description'  => $this->t('May depend on the enabled supported or supportive modules: colorbox, photobox etc. See docs for details. Clear cache if they do not appear here due to being permanently cached. Add Thumbnail style if using Photobox, Slick, or others which may need it. Try selecting "<strong>- None -</strong>" first before changing if trouble with this complex form states.'),
+        '#description'  => $this->t('Clear cache if lightboxes do not appear here due to being permanently cached. <ol><li>Link to content: for aggregated small slicks.</li><li>Image to iframe: video is hidden below image until toggled, otherwise iframe is always displayed, and draggable fails. Aspect ratio applies.</li><li>(Quasi-)lightboxes: Colorbox, ElevateZoomPlus, Intense, Photobox, PhotoSwipe, Magnific Popup, Slick Lightbox, Splidebox, Zooming, etc. Depends on the enabled supported modules, or has known integration with Blazy. See docs or <em>/admin/help/blazy_ui</em> for details.</li></ol> Add <em>Thumbnail style</em> if using Photobox, Slick, or others which may need it. Try selecting "<strong>- None -</strong>" first before changing if trouble with this complex form states.'),
         '#weight'       => -99,
       ];
 
@@ -594,14 +594,13 @@ abstract class BlazyAdminBase implements BlazyAdminInterface {
     $excludes = ['details', 'fieldset', 'hidden', 'markup', 'item', 'table'];
     $selects = ['cache', 'optionset', 'view_mode'];
 
-    // Disable the admin css in the layout builder, to avoid conflicts with
+    // Disable the admin css in the off canvas menu, to avoid conflicts with
     // the active frontend theme.
-    // @todo recheck str_starts_with for PHP7. No errors at PHP7.4, last time.
-    if ($admin_css && $router = Path::routeMatch()) {
-      $route_name = $router->getRouteName();
+    if ($admin_css && $router = Path::requestStack()) {
+      $wrapper_format = $router->getCurrentRequest()->query->get('_wrapper_format');
 
-      if (!empty($route_name)) {
-        $admin_css = mb_strpos($route_name, 'layout_builder.') === FALSE;
+      if (!empty($wrapper_format) && $wrapper_format === "drupal_dialog.off_canvas") {
+        $admin_css = FALSE;
       }
     }
 

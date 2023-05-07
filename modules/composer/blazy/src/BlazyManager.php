@@ -49,7 +49,8 @@ class BlazyManager extends BlazyManagerBase implements TrustedCallbackInterface 
     CheckItem::essentials($settings, $item, $delta);
 
     // Prevents double checks.
-    $blazies = $settings['blazies'];
+    // @todo re-check for dup thumbnails without a reset here, see #3278525.
+    $blazies = $settings['blazies']->reset($settings);
     $blazies->set('is.api', TRUE);
 
     // Respects content not handled by theme_blazy(), but passed through.
@@ -232,7 +233,7 @@ class BlazyManager extends BlazyManagerBase implements TrustedCallbackInterface 
     $litebox = $blazies->is('lightbox');
     $blazy = ($build['content'][0]['#settings'] ?? NULL);
 
-    if ($rich && $litebox && $blazy) {
+    if ($rich && $litebox && is_object($blazy)) {
       if ($blazies->is('hires', !empty($settings['image']))) {
         // Overrides the overriden settings with original formatter settings.
         $settings = array_merge($settings, $blazy->storage());

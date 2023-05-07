@@ -2,6 +2,7 @@
 
 namespace Drupal\extra_field\Plugin;
 
+use Drupal\Core\Entity\ContentEntityTypeInterface;
 use Drupal\Core\Plugin\DefaultPluginManager;
 
 /**
@@ -68,7 +69,8 @@ abstract class ExtraFieldManagerBase extends DefaultPluginManager implements Ext
   /**
    * Returns entity-bundle combinations this plugin supports.
    *
-   * If a wildcard bundle is set, all bundles of the entity will be included.
+   * If a wildcard entity type of bundle is set, all respective entity types or
+   * bundles of the entity will be included.
    *
    * @param string[] $entityBundleKeys
    *   Array of entity-bundle strings that define the bundles for which the
@@ -76,7 +78,7 @@ abstract class ExtraFieldManagerBase extends DefaultPluginManager implements Ext
    *   '*' can be used as bundle wildcard.
    *
    * @return array
-   *   Array of entity and bundle names. Keyed by the [entity].[bundle] key.
+   *   Array of entity and bundle machine name pairs.
    */
   protected function supportedEntityBundles(array $entityBundleKeys) {
 
@@ -86,25 +88,56 @@ abstract class ExtraFieldManagerBase extends DefaultPluginManager implements Ext
         continue;
       }
 
-      list($entityType, $bundle) = explode('.', $entityBundleKey);
-      if ($bundle == '*') {
-        foreach ($this->allEntityBundles($entityType) as $bundle) {
-          $key = $this->entityBundleKey($entityType, $bundle);
-          $result[$key] = [
-            'entity' => $entityType,
-            'bundle' => $bundle,
-          ];
+      [$parsedEntityType, $parsedBundle] = explode('.', $entityBundleKey);
+      if ($parsedEntityType === '*') {
+        $entityTypes = $this->getAllContentEntityTypes();
+        foreach ($entityTypes as $entityType) {
+          $result += $this->makeEntityBundlePairs($entityType, $parsedBundle);
         }
       }
       else {
-        $result[$entityBundleKey] = [
+        $result += $this->makeEntityBundlePairs($parsedEntityType, $parsedBundle);
+      }
+    }
+
+    return $result;
+  }
+
+  /**
+   * Returns an array of entity and bundle names.
+   *
+   * @param string $entityType
+   *   The entity type machine name.
+   * @param string $bundleString
+   *   The bundle machine name or '*'.
+   *
+   * @return array
+   *   Array of entity and bundle machine names keyed by a "[entity].[bundle]"
+   *   key. The value is an array with keys of:
+   *   - entity: The entity type machine name.
+   *   - bundle: The bundle machine name.
+   */
+  protected function makeEntityBundlePairs($entityType, $bundleString) {
+    $pairs = [];
+
+    if ($bundleString === '*') {
+      foreach ($this->allEntityBundles($entityType) as $bundle) {
+        $key = $this->entityBundleKey($entityType, $bundle);
+        $pairs[$key] = [
           'entity' => $entityType,
           'bundle' => $bundle,
         ];
       }
     }
+    else {
+      $key = $this->entityBundleKey($entityType, $bundleString);
+      $pairs[$key] = [
+        'entity' => $entityType,
+        'bundle' => $bundleString,
+      ];
+    }
 
-    return $result;
+    return $pairs;
   }
 
   /**
@@ -135,6 +168,27 @@ abstract class ExtraFieldManagerBase extends DefaultPluginManager implements Ext
   }
 
   /**
+   * Returns the machine names of all content entities.
+   *
+   * @return array
+   *   Machine names of content entities.
+   */
+  protected function getAllContentEntityTypes() {
+
+    $contentEntityTypes = [];
+    $definitions = $this->getEntityTypeManager()->getDefinitions();
+
+    foreach ($definitions as $entityTypeDefinition) {
+      if (!$entityTypeDefinition instanceof ContentEntityTypeInterface) {
+        continue;
+      }
+      $contentEntityTypes[] = $entityTypeDefinition->id();
+    }
+
+    return $contentEntityTypes;
+  }
+
+  /**
    * Build the field name string.
    *
    * @param string $pluginId
@@ -145,7 +199,7 @@ abstract class ExtraFieldManagerBase extends DefaultPluginManager implements Ext
    */
   protected function fieldName($pluginId) {
 
-    return 'extra_field_' . $pluginId;
+    return static::EXTRA_FIELD_PREFIX . $pluginId;
   }
 
   /**

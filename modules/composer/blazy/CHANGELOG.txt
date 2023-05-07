@@ -1,4 +1,60 @@
 
+Blazy 8.x-2.0-dev, 2022-12-15
+------------------------------
+- Issue #3317773 by Elvin - Albania Drupal Developer: Missing ALT attribute when
+  using Decorative Image and Responsive Image.
+- Issue #3322138 by Luispe: Activate Responsive Image Styles on Blazy OEmbed
+  Formatter.
+- Issue #3325423 by AnasNaamneh: Delete button at slick UI admin page is not
+  shown.
+- Issue #3321264 by trickfun, gausarts: Call to a member function storage() on
+  array in Drupal\blazy\BlazyManager->buildContent().
+- Issue #3326389 by Berdir: Drupal 10: TypeError: ParameterBag::getInt():
+  Argument #2 ($default) must be of type int, null given.
+- Issue #3323439 by rcodina: Inserting a slideshare iframe causes a PHP error.
+
+Blazy 8.x-2.0-dev, 2022-09-30
+------------------------------
+- Issue #3299609 by DD 85: The service "blazy.base" has a dependency on a
+  non-existent parameter "app.root".
+- Issue #3308524 by balintpekker, nkoporec, mglaman: Drupal 10
+  compatibility - off canvas.
+
+Blazy 8.x-2.0-dev, 2022-07-15
+-----------------------------
+- Issue #3285374 by vinitk, djsagar: Blazy module hiding media gallery image
+  with gin admin theme.
+- Issue #3296139 by Carlos Romero, gausarts: Lightbox gallery not working for
+  Blazy custom Views fields.
+
+Blazy 8.x-2.0-dev, 2022-05-31
+-----------------------------
+- Issue #3283156 by YazanMajadba: Support align/style(float) attribute on
+  blazy filter.
+- Issue #3282785 by jurgenhaas, Anybody, gausarts, Rajab Natshah: WSOD after
+  update to 2.12: Error: Call to a member function get() on null.
+
+Blazy 8.x-2.0-dev, 2022-05-18
+-----------------------------
+- Fixed for vanilla regressions.
+
+Blazy 8.x-2.0-dev, 2022-05-17
+-----------------------------
+- Issue #3279831 by poedan: Allow multiple thumbnails on the same video url.
+- Issue #3280769 by gausarts, bgreco: "Lightbox image style" setting does
+  not work.
+
+Blazy 8.x-2.0-dev, 2022-05-07
+-----------------------------
+- Fixed for dup thumbnail regression, see #3278525.
+- Fixed for lightbox caption with token regression.
+- Issue #3278009 by gausarts, hunterbuchanan: Default image no longer
+  shows up in image field using Blazy 2.10.
+
+Blazy 8.x-2.0-dev, 2022-04-24
+-----------------------------
+- Issue #3118368 by gausarts, W01F: Lightboxes are gone.
+
 Blazy 8.x-2.0-dev, 2022-04-20
 -----------------------------
 - Fixed for Slick caption not visible anymore by stopopol (#3276156).

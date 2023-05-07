@@ -21,12 +21,12 @@ class ExtraFieldFormManagerTest extends UnitTestCase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp() {
+  protected function setUp(): void {
     parent::setUp();
 
     $this->formManager = $this->getMockBuilder('Drupal\extra_field\Plugin\ExtraFieldFormManager')
       ->disableOriginalConstructor()
-      ->setMethods(['getDefinitions', 'allEntityBundles'])
+      ->onlyMethods(['getDefinitions', 'allEntityBundles'])
       ->getMock();
   }
 

@@ -8,6 +8,11 @@ namespace Drupal\extra_field\Plugin;
 interface ExtraFieldManagerBaseInterface {
 
   /**
+   * The component id prefix for every extra_field.
+   */
+  const EXTRA_FIELD_PREFIX = 'extra_field_';
+
+  /**
    * Exposes the ExtraField plugins to hook_entity_extra_field_info().
    *
    * @return array

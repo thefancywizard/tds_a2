@@ -87,7 +87,7 @@ class ExtraFieldFormManager extends ExtraFieldManagerBase implements ExtraFieldF
         $fieldName = $this->fieldName($pluginId);
         $info[$entityType][$bundle]['form'][$fieldName] = [
           'label' => $definition['label'],
-          'description' => isset($definition['description']) ? $definition['description'] : '',
+          'description' => $definition['description'] ?? '',
           'weight' => $definition['weight'],
           'visible' => $definition['visible'],
         ];
@@ -108,6 +108,9 @@ class ExtraFieldFormManager extends ExtraFieldManagerBase implements ExtraFieldF
     }
 
     $display = $formObject->getFormDisplay($formState);
+    if (!$display) {
+      return;
+    }
     $entityType = $display->getTargetEntityTypeId();
     $entityBundleKey = $this->entityBundleKey($entityType, $display->get('bundle'));
     foreach ($this->getDefinitions() as $pluginId => $definition) {

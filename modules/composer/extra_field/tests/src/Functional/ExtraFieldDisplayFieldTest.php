@@ -12,7 +12,7 @@ class ExtraFieldDisplayFieldTest extends ExtraFieldBrowserTestBase {
   /**
    * {@inheritdoc}
    */
-  public static $modules = [
+  protected static $modules = [
     'extra_field',
     'extra_field_test',
     'node',
@@ -35,7 +35,7 @@ class ExtraFieldDisplayFieldTest extends ExtraFieldBrowserTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp() {
+  protected function setUp(): void {
     parent::setUp();
 
     $this->firstNode = $this->createContent('first_node_type');
@@ -62,7 +62,7 @@ class ExtraFieldDisplayFieldTest extends ExtraFieldBrowserTestBase {
     // Test the output of field with cacheable dependency.
     $this->assertSession()->pageTextContains('Related pages');
     $this->assertSession()->pageTextContains($this->secondNode->label());
-    $this->assertCacheTag('node:' . $this->secondNode->id());
+    $this->assertSession()->responseHeaderContains('X-Drupal-Cache-Tags', 'node:' . $this->secondNode->id());
 
     // Test the output of the empty field.
     $this->assertSession()->pageTextNotContains('Empty field');

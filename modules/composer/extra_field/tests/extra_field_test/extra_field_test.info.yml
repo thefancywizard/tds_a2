@@ -2,12 +2,11 @@ name: Extra Field Test
 type: module
 description: 'Provides Extra Field plugins for tests.'
 hidden: true
-core: 8.x
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9 || ^10
 dependencies:
   - extra_field:extra_field
 
-# Information added by Drupal.org packaging script on 2021-04-26
-version: '8.x-2.1'
+# Information added by Drupal.org packaging script on 2022-09-25
+version: '8.x-2.3'
 project: 'extra_field'
-datestamp: 1619442010
+datestamp: 1664136095

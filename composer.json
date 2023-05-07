@@ -26,6 +26,7 @@
         "drupal/blog": "^3.0",
         "drupal/commerce": "^2.33",
         "drupal/commerce_file": "^2.0",
+        "drupal/commerce_stripe": "^1.0",
         "drupal/contact_block": "1.5",
         "drupal/content_entity_builder": "1.0-beta11",
         "drupal/core-composer-scaffold": "^9.2",

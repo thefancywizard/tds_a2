@@ -27,7 +27,7 @@ class ExtraFieldDisplayManagerTest extends UnitTestCase {
   protected function prepareDisplayManager(array $methods) {
     $this->displayManager = $this->getMockBuilder('Drupal\extra_field\Plugin\ExtraFieldDisplayManager')
       ->disableOriginalConstructor()
-      ->setMethods($methods)
+      ->onlyMethods($methods)
       ->getMock();
   }
 
