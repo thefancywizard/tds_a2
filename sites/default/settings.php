@@ -801,7 +801,7 @@ $databases['default']['default'] = array (
   'driver' => 'mysql',
   'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
 );
-$settings['config_sync_directory'] = 'sites/default/files/config_z3qcObucplUFoFMQzHdN1fMmcsepnM8vT5Ir0DcmoaVPoKlZhbeqfPEuozRsEyYbcT9mtBdmFA/sync';
+$settings['config_sync_directory'] = 'sites/default/sync';
 
 // if (isset($GLOBALS['request']) and
 // '/thedungeonsociety/index.php' === $GLOBALS['request']->server->get('SCRIPT_NAME')) {

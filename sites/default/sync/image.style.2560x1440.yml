@@ -1,0 +1,15 @@
+uuid: 48881e88-9b8d-4a7e-9d6d-7e8f97019fa6
+langcode: en
+status: true
+dependencies: {  }
+name: 2560x1440
+label: 2560x1440
+effects:
+  164e5688-0eed-4b32-899e-2f8c7735cf30:
+    uuid: 164e5688-0eed-4b32-899e-2f8c7735cf30
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 2560
+      height: 1440
+      anchor: center-center

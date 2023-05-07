@@ -1,0 +1,12 @@
+uuid: 74efd2ba-ad04-4e65-b9a8-60b19bf38c96
+langcode: en
+status: true
+dependencies: {  }
+id: tds_contact_form
+label: 'TDS contact form'
+recipients:
+  - info@thedungeonsociety.com
+reply: ''
+weight: 0
+message: ''
+redirect: ''

@@ -1,0 +1,21 @@
+uuid: 93a413b9-99c7-4b2b-b431-74923181fc06
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_team_member_bio
+    - node.type.team_members
+  module:
+    - text
+id: node.team_members.field_team_member_bio
+field_name: field_team_member_bio
+entity_type: node
+bundle: team_members
+label: 'Team Member Bio'
+description: 'A short description of the current Team Member.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

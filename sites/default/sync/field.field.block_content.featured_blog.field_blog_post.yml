@@ -1,0 +1,29 @@
+uuid: 424817c6-a26a-4517-a544-33bc359ba95d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.featured_blog
+    - field.storage.block_content.field_blog_post
+    - node.type.blog_post
+id: block_content.featured_blog.field_blog_post
+field_name: field_blog_post
+entity_type: block_content
+bundle: featured_blog
+label: 'Blog post'
+description: 'Choose the blog post to feature on the home page.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      blog_post: blog_post
+    sort:
+      field: created
+      direction: DESC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

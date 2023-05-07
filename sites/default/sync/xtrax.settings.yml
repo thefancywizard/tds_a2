@@ -1,0 +1,35 @@
+features:
+  node_user_picture: 1
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 1
+logo:
+  use_default: 1
+  path: 'public://tdsgoldlogo.png'
+favicon:
+  use_default: 0
+  path: 'public://The_Dungeon_Society_Favicon_2.png'
+  mimetype: image/png
+logo_image: /sites/default/files/TDS%20Logo%20Horizontal.png
+logo_image_upload: ''
+logo_image_transparent: /sites/default/files/TDS%20Logo%20Horizontal_0.png
+logo_image_transparent_upload: ''
+enable_demo: 1
+blog_listing_style: layout_2
+blog_description: "<h2 class=\"font-xlight\">Let's Get</h2>\r\n<h2 class=\"font-bold\">The Job Free Income</h2>\r\n<h2 class=\"font-xlight\">With Blog</h2>\r\n<h3 class=\"font-light pt-2\">The Best Multipurpose Template in Market</h3>"
+blog_background_image: /sites/default/files/background_images/monster_attack_background.jpg
+blog_background_image_upload: ''
+social_networks: "<li><a href=\"https://www.facebook.com/TheDungeonSociety\"><i class=\"fab fa-facebook-f\"></i> </a> </li>\r\n<li><a href=\"https://twitter.com/Dungeon_Society\"><i class=\"fab fa-twitter\"></i> </a> </li>\r\n<li><a href=\"https://www.instagram.com/thedungeonsociety\"><i class=\"fab fa-instagram\"></i> </a> </li>"
+contact_description: 'If you need to get in touch with someone at The Dungeon Society, you can do so by emailing info@thedungeonsociety.com. You can also subscribe for updates and follow us on social media to stay up to date on and interact with our community. Thanks!'
+contact_body: ''
+contact_background_image: /sites/default/files/background_images/castle_background.jpg
+contact_address_info: "<div class=\"text-center\">\r\n   <div class=\"heading-title\">\r\n      <span class=\"defaultcolor mb-3\">The Dungeon Society on Social Media</span>\r\n   </div>\r\n\r\n   <div class=\"info-email\">\r\n      <p>Email: <a href=\"mailto:info+websitevisitor@thedungeonsociety.com\">info@thedungeonsociety.com</a></p>\r\n   </div>\r\n\r\n   <ul class=\"social-icons mt-4 mb-4 mb-sm-0 wow fadeInUp\" data-wow-delay=\"300ms\" style=\"visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;\">\r\n     <li><a target=\"_blank\" href=\"https://www.facebook.com/thedungeonsociety\" target=\"_blank\"><i class=\"fab fa-facebook-f\"></i> </a> </li>\r\n     <li><a target=\"_blank\" href=\"https://www.twitter.com/dungeon_society\" target=\"_blank\"><i class=\"fab fa-twitter\"></i> </a> </li>\r\n     <li><a target=\"_blank\" href=\"https://www.instagram.com/thedungeonsociety\" target=\"_blank\"><i class=\"fab fa-instagram\"></i> </a> </li>\r\n     <li><a target=\"_blank\" href=\"https://www.tiktok.com/@therealrogden\" target=\"_blank\"><i class=\"fab fa-tiktok\"></i> </a> </li>\r\n   </ul>\r\n</div>"
+contact_subtitle: '<h3 class="font-light py-3">We''d Love To Hear From You.</h3>'
+lat: '41.40338'
+lng: '2.17403'
+contact_lat: '40.730610'
+contact_lng: '-73.935242'
+google_api_key: AIzaSyCansH4PGVWjwzuT5UnOPuLzvErs2majAc
+contact_background_image_upload: ''
+general_setting_tracking_code: ''
+custom_css: ''

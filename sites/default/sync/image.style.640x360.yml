@@ -1,0 +1,15 @@
+uuid: 34435301-e80b-4fac-a99d-00222dac1a0a
+langcode: en
+status: true
+dependencies: {  }
+name: 640x360
+label: 640x360
+effects:
+  fbc5a0fd-5d18-45a4-af78-75ba78cfbfeb:
+    uuid: fbc5a0fd-5d18-45a4-af78-75ba78cfbfeb
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 640
+      height: 360
+      anchor: center-center

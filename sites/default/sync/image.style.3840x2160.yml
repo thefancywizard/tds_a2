@@ -1,0 +1,15 @@
+uuid: 85bec6c7-5dc9-4614-8740-753b56adf250
+langcode: en
+status: true
+dependencies: {  }
+name: 3840x2160
+label: 3840x2160
+effects:
+  15a212fa-342c-49a3-8687-155a69cecd30:
+    uuid: 15a212fa-342c-49a3-8687-155a69cecd30
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 3840
+      height: 2160
+      anchor: center-center

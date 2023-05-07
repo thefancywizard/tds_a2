@@ -1,0 +1,32 @@
+uuid: eb9f9c92-0cf7-4647-8d59-8bfdd13a886f
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.100percent
+    - image.style.1280x800
+    - image.style.1920x1080
+    - image.style.2560x1440
+    - image.style.3840x2160
+    - image.style.480x320
+    - image.style.640x360
+    - image.style.960x540
+id: slider_image
+label: 'Slider image'
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - 1280x800
+        - 1920x1080
+        - 2560x1440
+        - 3840x2160
+        - 480x320
+        - 640x360
+        - 960x540
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+breakpoint_group: responsive_image
+fallback_image_style: 100percent
