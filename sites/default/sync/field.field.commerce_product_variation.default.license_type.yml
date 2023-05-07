@@ -1,0 +1,21 @@
+uuid: edfe2d93-3361-4bb4-acb0-4794160e4f46
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.default
+    - field.storage.commerce_product_variation.license_type
+  module:
+    - commerce
+id: commerce_product_variation.default.license_type
+field_name: license_type
+entity_type: commerce_product_variation
+bundle: default
+label: 'License Type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: null
+settings: {  }
+field_type: 'commerce_plugin_item:commerce_license_type'

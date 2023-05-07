@@ -5,7 +5,10 @@ dependencies:
   config:
     - commerce_product.commerce_product_variation_type.default
     - core.entity_view_mode.commerce_product_variation.cart
+    - field.field.commerce_product_variation.default.commerce_file
     - field.field.commerce_product_variation.default.field_sale_off
+    - field.field.commerce_product_variation.default.license_expiration
+    - field.field.commerce_product_variation.default.license_type
   module:
     - commerce_price
   enforced:
@@ -37,7 +40,10 @@ content:
     weight: 0
     region: content
 hidden:
+  commerce_file: true
   field_sale_off: true
+  license_expiration: true
+  license_type: true
   price: true
   sku: true
   title: true

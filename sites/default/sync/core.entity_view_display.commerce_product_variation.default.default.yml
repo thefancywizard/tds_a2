@@ -4,7 +4,10 @@ status: true
 dependencies:
   config:
     - commerce_product.commerce_product_variation_type.default
+    - field.field.commerce_product_variation.default.commerce_file
     - field.field.commerce_product_variation.default.field_sale_off
+    - field.field.commerce_product_variation.default.license_expiration
+    - field.field.commerce_product_variation.default.license_type
   module:
     - commerce_price
 id: commerce_product_variation.default.default
@@ -40,6 +43,9 @@ content:
     weight: 0
     region: content
 hidden:
+  commerce_file: true
+  license_expiration: true
+  license_type: true
   product_id: true
   sku: true
   title: true
