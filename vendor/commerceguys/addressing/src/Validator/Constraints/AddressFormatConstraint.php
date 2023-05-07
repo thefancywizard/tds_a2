@@ -80,7 +80,7 @@ class AddressFormatConstraint extends Constraint
     }
 
     /**
-     * @return string|string[]
+     * {@inheritdoc}
      */
     public function getTargets()
     {

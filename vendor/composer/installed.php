@@ -3,7 +3,7 @@
         'name' => 'pantheon-upstreams/drupal-project',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '7f69a0595b5067078b7f620ef715c6b90b9ab56f',
+        'reference' => '04da2b7b569d75e64ea5b0558806d06f052c0d59',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -29,9 +29,9 @@
             'dev_requirement' => false,
         ),
         'commerceguys/addressing' => array(
-            'pretty_version' => 'v1.4.2',
-            'version' => '1.4.2.0',
-            'reference' => '406c7b5f0fbe4f6a64155c0fe03b1adb34d01308',
+            'pretty_version' => 'v1.3.0',
+            'version' => '1.3.0.0',
+            'reference' => '566febd56ca71e31dd383b014c4e1bec680507bf',
             'type' => 'library',
             'install_path' => __DIR__ . '/../commerceguys/addressing',
             'aliases' => array(),
@@ -254,9 +254,9 @@
             'dev_requirement' => false,
         ),
         'drupal/address' => array(
-            'pretty_version' => '1.11.0',
-            'version' => '1.11.0.0',
-            'reference' => '8.x-1.11',
+            'pretty_version' => '1.10.0',
+            'version' => '1.10.0.0',
+            'reference' => '8.x-1.10',
             'type' => 'drupal-module',
             'install_path' => __DIR__ . '/../../modules/composer/address',
             'aliases' => array(),
@@ -412,6 +412,15 @@
             'reference' => NULL,
             'type' => 'metapackage',
             'install_path' => NULL,
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'drupal/commerce_paypal' => array(
+            'pretty_version' => '1.4.0',
+            'version' => '1.4.0.0',
+            'reference' => '8.x-1.4',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../modules/composer/commerce_paypal',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -934,6 +943,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'firebase/php-jwt' => array(
+            'pretty_version' => 'v6.4.0',
+            'version' => '6.4.0.0',
+            'reference' => '4dd1e007f22a927ac77da5a3fbb067b42d3bc224',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../firebase/php-jwt',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'grasmash/expander' => array(
             'pretty_version' => '1.0.0',
             'version' => '1.0.0.0',
@@ -1066,7 +1084,7 @@
         'pantheon-upstreams/drupal-project' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '7f69a0595b5067078b7f620ef715c6b90b9ab56f',
+            'reference' => '04da2b7b569d75e64ea5b0558806d06f052c0d59',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -1138,8 +1156,8 @@
         'psr/container-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0',
-                1 => '^1.0',
+                0 => '^1.0',
+                1 => '1.0',
             ),
         ),
         'psr/event-dispatcher-implementation' => array(
@@ -1222,6 +1240,15 @@
             'replaced' => array(
                 0 => 'v1.10.13',
             ),
+        ),
+        'sainsburys/guzzle-oauth2-plugin' => array(
+            'pretty_version' => 'v3.0.7',
+            'version' => '3.0.7.0',
+            'reference' => 'cfb96110cc7199dbde8f1c68dfe35f79a81340f6',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../sainsburys/guzzle-oauth2-plugin',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'shama/baton' => array(
             'dev_requirement' => false,

@@ -12,7 +12,7 @@ class AddressFormatRepository implements AddressFormatRepositoryInterface
     protected $addressFormats = [];
 
     /**
-     * @return AddressFormat
+     * {@inheritdoc}
      */
     public function get($countryCode)
     {
@@ -28,9 +28,9 @@ class AddressFormatRepository implements AddressFormatRepositoryInterface
     }
 
     /**
-     * @return AddressFormat[]
+     * {@inheritdoc}
      */
-    public function getAll(): array
+    public function getAll()
     {
         $definitions = $this->getDefinitions();
         $addressFormats = [];
@@ -50,7 +50,7 @@ class AddressFormatRepository implements AddressFormatRepositoryInterface
      *
      * @return array The processed definition.
      */
-    protected function processDefinition(string $countryCode, array $definition): array
+    protected function processDefinition($countryCode, array $definition)
     {
         $definition['country_code'] = $countryCode;
         // Merge-in defaults.
@@ -67,7 +67,7 @@ class AddressFormatRepository implements AddressFormatRepositoryInterface
      *
      * @return array The generic address format definition.
      */
-    protected function getGenericDefinition(): array
+    protected function getGenericDefinition()
     {
         return [
             'format' => "%givenName %familyName\n%organization\n%addressLine1\n%addressLine2\n%locality",
@@ -90,7 +90,7 @@ class AddressFormatRepository implements AddressFormatRepositoryInterface
      *
      * @return array The address format definitions.
      */
-    protected function getDefinitions(): array
+    protected function getDefinitions()
     {
         // @codingStandardsIgnoreStart
         $definitions = [
