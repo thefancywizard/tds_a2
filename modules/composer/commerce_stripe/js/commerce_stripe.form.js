@@ -50,7 +50,7 @@
         catch (e) {
           $form.find('#payment-errors').html(Drupal.theme('commerceStripeError', e.message));
           $form.find(':input.button--primary').prop('disabled', true);
-          $(this).find('.form-item').hide();
+          //$(this).find('.form-item').hide();
           return;
         }
 
