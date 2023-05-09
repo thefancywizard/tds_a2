@@ -7,6 +7,7 @@ dependencies:
   module:
     - comment
     - commerce_checkout
+    - commerce_payment
     - commerce_product
     - contact
     - display_text_module
@@ -26,6 +27,7 @@ permissions:
   - 'access comments'
   - 'access content'
   - 'access site-wide contact form'
+  - 'manage own commerce_payment_method'
   - 'post comments'
   - 'search content'
   - 'use text format restricted_html'
