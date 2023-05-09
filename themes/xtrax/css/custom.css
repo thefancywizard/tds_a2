@@ -133,3 +133,8 @@ td[headers="view-remove-button-table-column"] input[type=submit]:hover{
   }
 }
 
+.commerce-checkout-flow span,
+.commerce-checkout-flow a {
+  color: #808080 !important;
+}
+
