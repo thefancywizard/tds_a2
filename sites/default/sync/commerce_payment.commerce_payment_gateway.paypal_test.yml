@@ -1,6 +1,6 @@
 uuid: adfff2be-80a3-491c-8442-38b903a1ea95
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - commerce_paypal
