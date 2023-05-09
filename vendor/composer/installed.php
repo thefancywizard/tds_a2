@@ -3,7 +3,7 @@
         'name' => 'pantheon-upstreams/drupal-project',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'c442ebca34fbba96c7e72d09b6fc7b3b6e50a8bd',
+        'reference' => '5f49afc0eed122f59bc4bff0acc7b962145cb88c',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -1093,7 +1093,7 @@
         'pantheon-upstreams/drupal-project' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'c442ebca34fbba96c7e72d09b6fc7b3b6e50a8bd',
+            'reference' => '5f49afc0eed122f59bc4bff0acc7b962145cb88c',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
